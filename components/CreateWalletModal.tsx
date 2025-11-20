@@ -23,19 +23,25 @@ export default function CreateWalletModal({ onClose, onWalletCreated }: CreateWa
       setIsJoining(true);
 
       // Generate wallet
+      console.log('Generating wallet...');
       const newWallet = generateWallet();
+      console.log('Wallet generated:', newWallet.publicKey);
       setWallet(newWallet);
 
       // Save to localStorage
+      console.log('Saving wallet to localStorage...');
       saveWallet(newWallet);
 
       // Automatically join tournament
-      await joinTournament(newWallet.publicKey);
+      console.log('Joining tournament with public key:', newWallet.publicKey);
+      const result = await joinTournament(newWallet.publicKey);
+      console.log('Join tournament result:', result);
 
       setStep('created');
       onWalletCreated(newWallet);
     } catch (err: any) {
       console.error('Error creating wallet:', err);
+      console.error('Error stack:', err.stack);
       setError(err.message || 'Failed to create wallet');
     } finally {
       setIsJoining(false);

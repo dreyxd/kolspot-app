@@ -408,13 +408,26 @@ export async function getKolBoard(): Promise<KolBoardEntry[]> {
  */
 export async function joinTournament(walletAddress: string): Promise<boolean> {
   try {
+    console.log('Attempting to join tournament with wallet:', walletAddress);
+    console.log('API URL:', `${API_BASE_URL}/api/tournaments/join`);
+    
     const response = await fetch(`${API_BASE_URL}/api/tournaments/join`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ wallet: walletAddress }),
     });
-    if (!response.ok) throw new Error("Failed to join tournament");
+    
+    console.log('Response status:', response.status);
+    console.log('Response ok:', response.ok);
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Response error:', errorText);
+      throw new Error(`Failed to join tournament: ${response.status} ${errorText}`);
+    }
+    
     const data: ApiResponse<{ success: boolean }> = await response.json();
+    console.log('Join tournament response:', data);
     return data.data.success;
 
     // await new Promise((resolve) => setTimeout(resolve, 100));
