@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Card from "@/components/Card";
@@ -42,7 +42,7 @@ export default function KolBoardPage() {
   if (isLoading) {
     return (
       <div className="container mx-auto px-4 py-12">
-        <div className="text-center text-slate-400">Loading KOLBoard...</div>
+        <div className="text-center text-neutral-400">Loading KOLBoard...</div>
       </div>
     );
   }
@@ -53,7 +53,7 @@ export default function KolBoardPage() {
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-white mb-3">
           <span className="text-white">KOL</span>
-          <span className="text-accent-orange">Board</span>
+          <span className="text-accent">Board</span>
           <span className="text-white"> – Top Community KOLs</span>
         </h1>
         <p className="text-lg text-slate-300 max-w-3xl">
@@ -66,23 +66,23 @@ export default function KolBoardPage() {
       {/* Stats Overview */}
       <div className="grid md:grid-cols-4 gap-4 mb-8">
         <Card>
-          <div className="text-sm text-slate-400 mb-1">Total KOLs</div>
+          <div className="text-sm text-neutral-400 mb-1">Total KOLs</div>
           <div className="text-2xl font-bold text-white">{kolBoard.length}</div>
         </Card>
         <Card>
-          <div className="text-sm text-slate-400 mb-1">Community KOLs</div>
-          <div className="text-2xl font-bold text-accent-orange">
+          <div className="text-sm text-neutral-400 mb-1">Community KOLs</div>
+          <div className="text-2xl font-bold text-accent">
             {kolBoard.filter((k) => k.isCommunityKol).length}
           </div>
         </Card>
         <Card>
-          <div className="text-sm text-slate-400 mb-1">Legendary Tier</div>
+          <div className="text-sm text-neutral-400 mb-1">Legendary Tier</div>
           <div className="text-2xl font-bold text-yellow-400">
             {kolBoard.filter((k) => k.tier === "Legendary").length}
           </div>
         </Card>
         <Card>
-          <div className="text-sm text-slate-400 mb-1">Active Traders</div>
+          <div className="text-sm text-neutral-400 mb-1">Active Traders</div>
           <div className="text-2xl font-bold text-green-400">{kolBoard.length}</div>
         </Card>
       </div>
@@ -92,7 +92,7 @@ export default function KolBoardPage() {
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-slate-800 text-left text-sm text-slate-400">
+              <tr className="border-b border-white/10 text-left text-sm text-neutral-400">
                 <th className="pb-3 font-medium">Rank</th>
                 <th className="pb-3 font-medium">Tier</th>
                 <th className="pb-3 font-medium">Name</th>
@@ -110,9 +110,9 @@ export default function KolBoardPage() {
                 return (
                   <tr
                     key={entry.rank}
-                    className={`border-b border-slate-800/50 transition-colors hover:bg-slate-800/30 ${
+                    className={`border-b border-white/10/50 transition-colors hover:bg-white/10/30 ${
                       entry.isCommunityKol
-                        ? "border-l-4 border-l-accent-orange"
+                        ? "border-l-4 border-l-accent"
                         : ""
                     }`}
                   >
@@ -120,7 +120,7 @@ export default function KolBoardPage() {
                       <div className="flex items-center space-x-2">
                         <span
                           className={`text-lg font-semibold ${
-                            isTop3 ? "text-accent-orange" : "text-slate-300"
+                            isTop3 ? "text-accent" : "text-slate-300"
                           }`}
                         >
                           #{entry.rank}
@@ -134,14 +134,14 @@ export default function KolBoardPage() {
                       <div>
                         <div className="font-semibold text-white">{entry.name}</div>
                         {entry.alias && (
-                          <div className="text-xs text-slate-400 italic">
+                          <div className="text-xs text-neutral-400 italic">
                             "{entry.alias}"
                           </div>
                         )}
                       </div>
                     </td>
                     <td className="py-4">
-                      <code className="text-sm text-slate-400">{entry.wallet}</code>
+                      <code className="text-sm text-neutral-400">{entry.wallet}</code>
                     </td>
                     <td className="py-4">
                       <span className="text-lg font-bold text-green-400">
@@ -152,7 +152,7 @@ export default function KolBoardPage() {
                       {entry.lastSeasonResult ? (
                         <span className="text-2xl">{entry.lastSeasonResult}</span>
                       ) : (
-                        <span className="text-slate-500">—</span>
+                        <span className="text-neutral-500">—</span>
                       )}
                     </td>
                     <td className="py-4">
@@ -190,7 +190,7 @@ export default function KolBoardPage() {
               <li>• <strong className="text-white">Tournament Success:</strong> Placements in previous seasons</li>
               <li>• <strong className="text-white">Community Recognition:</strong> Featured KOLs with verified track records</li>
             </ul>
-            <p className="text-slate-400 mt-3 text-sm">
+            <p className="text-neutral-400 mt-3 text-sm">
               Want to be featured on the KOLBoard? Join our tournaments and prove your
               trading skills!
             </p>

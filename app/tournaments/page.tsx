@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Card from "@/components/Card";
@@ -73,7 +73,7 @@ export default function TournamentsPage() {
   if (isLoading) {
     return (
       <div className="container mx-auto px-4 py-12">
-        <div className="text-center text-slate-400">Loading tournament data...</div>
+        <div className="text-center text-neutral-400">Loading tournament data...</div>
       </div>
     );
   }
@@ -85,7 +85,7 @@ export default function TournamentsPage() {
           <div className="text-center py-12">
             <div className="text-6xl mb-4">🏆</div>
             <h3 className="text-xl font-bold text-white mb-2">No Active Tournament</h3>
-            <p className="text-slate-400">Check back soon for upcoming tournaments!</p>
+            <p className="text-neutral-400">Check back soon for upcoming tournaments!</p>
           </div>
         </Card>
       </div>
@@ -115,7 +115,7 @@ export default function TournamentsPage() {
                   <Countdown endDate={tournament.endDate} />
                 )}
               </div>
-              <div className="text-sm text-slate-400">
+              <div className="text-sm text-neutral-400">
                 {tournament.participants} participants joined
               </div>
             </div>
@@ -124,12 +124,12 @@ export default function TournamentsPage() {
               {myPerformance?.hasJoined ? (
                 <button
                   onClick={() => setActiveTab("performance")}
-                  className="rounded-lg bg-accent-orange px-8 py-3 font-semibold text-white transition-all hover:bg-accent-orange-light hover:ring-2 hover:ring-accent-orange/50"
+                  className="rounded-lg bg-accent px-8 py-3 font-semibold text-white transition-all hover:bg-accent-soft hover:ring-2 hover:ring-accent/50"
                 >
                   View My Performance
                 </button>
               ) : (
-                <button className="rounded-lg bg-accent-orange px-8 py-3 font-semibold text-white transition-all hover:bg-accent-orange-light hover:ring-2 hover:ring-accent-orange/50">
+                <button className="rounded-lg bg-accent px-8 py-3 font-semibold text-white transition-all hover:bg-accent-soft hover:ring-2 hover:ring-accent/50">
                   Join Tournament
                 </button>
               )}
@@ -138,14 +138,14 @@ export default function TournamentsPage() {
 
           {/* Right: Prize Pool & Rewards */}
           <div className="flex flex-col justify-center space-y-4">
-            <div className="rounded-lg border border-accent-orange/20 bg-accent-orange/5 p-6">
-              <div className="text-sm font-semibold text-accent-orange mb-3">
+            <div className="rounded-lg border border-accent/20 bg-accent/5 p-6">
+              <div className="text-sm font-semibold text-accent mb-3">
                 PRIZE POOL
               </div>
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-white">🥇 1st Place</span>
-                  <span className="text-xl font-bold text-accent-orange">
+                  <span className="text-xl font-bold text-accent">
                     {tournament.prizePool.first} SOL
                   </span>
                 </div>
@@ -174,7 +174,7 @@ export default function TournamentsPage() {
           <Card>
             <div className="mb-6">
               <h2 className="text-2xl font-bold text-white mb-2">Tournament Leaderboard</h2>
-              <p className="text-slate-400">
+              <p className="text-neutral-400">
                 Top performers ranked by ROI%. Top 3 receive SOL rewards.
               </p>
             </div>
@@ -192,12 +192,12 @@ export default function TournamentsPage() {
                   <h3 className="text-xl font-bold text-white mb-2">
                     {!walletAddress ? "Connect Your Wallet" : "Join Tournament"}
                   </h3>
-                  <p className="text-slate-400 mb-6 max-w-md mx-auto">
+                  <p className="text-neutral-400 mb-6 max-w-md mx-auto">
                     {!walletAddress
                       ? "Connect your wallet and join the tournament to see your performance here."
                       : "Join the tournament to start tracking your performance."}
                   </p>
-                  <button className="rounded-lg bg-accent-orange px-8 py-3 font-semibold text-white transition-all hover:bg-accent-orange-light">
+                  <button className="rounded-lg bg-accent px-8 py-3 font-semibold text-white transition-all hover:bg-accent-soft">
                     {!walletAddress ? "Connect Wallet" : "Join Tournament"}
                   </button>
                 </div>
@@ -232,8 +232,8 @@ export default function TournamentsPage() {
                   <h3 className="text-lg font-semibold text-white mb-4">
                     Performance Over Time
                   </h3>
-                  <div className="h-64 rounded-lg border border-slate-800 bg-slate-900/50 flex items-center justify-center">
-                    <div className="text-slate-500 text-center">
+                  <div className="h-64 rounded-lg border border-white/10 bg-background/50 flex items-center justify-center">
+                    <div className="text-neutral-500 text-center">
                       <div className="text-4xl mb-2">📊</div>
                       <div>Chart will be integrated here</div>
                       <div className="text-sm mt-1">
@@ -249,7 +249,7 @@ export default function TournamentsPage() {
                   <div className="overflow-x-auto">
                     <table className="w-full">
                       <thead>
-                        <tr className="border-b border-slate-800 text-left text-sm text-slate-400">
+                        <tr className="border-b border-white/10 text-left text-sm text-neutral-400">
                           <th className="pb-3 font-medium">Time</th>
                           <th className="pb-3 font-medium">Token</th>
                           <th className="pb-3 font-medium">Side</th>
@@ -263,7 +263,7 @@ export default function TournamentsPage() {
                       <tbody>
                         {myTrades.length === 0 ? (
                           <tr>
-                            <td colSpan={8} className="py-8 text-center text-slate-400">
+                            <td colSpan={8} className="py-8 text-center text-neutral-400">
                               No trades yet. Start trading to see your activity here!
                             </td>
                           </tr>
@@ -271,9 +271,9 @@ export default function TournamentsPage() {
                           myTrades.map((trade) => (
                           <tr
                             key={trade.id}
-                            className="border-b border-slate-800/50 hover:bg-slate-800/30"
+                            className="border-b border-white/10/50 hover:bg-white/10/30"
                           >
-                            <td className="py-3 text-sm text-slate-400">
+                            <td className="py-3 text-sm text-neutral-400">
                               {new Date(trade.timestamp).toLocaleDateString("en-US", {
                                 month: "short",
                                 day: "numeric",
@@ -324,7 +324,7 @@ export default function TournamentsPage() {
                                 href={`https://solscan.io/tx/${trade.txHash}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-accent-orange hover:text-accent-orange-light text-sm"
+                                className="text-accent hover:text-accent-soft text-sm"
                               >
                                 View
                               </a>
@@ -371,7 +371,7 @@ export default function TournamentsPage() {
                   </ul>
                 </div>
 
-                <div className="pt-4 border-t border-slate-800">
+                <div className="pt-4 border-t border-white/10">
                   <h3 className="text-xl font-semibold text-white mb-3">Scoring</h3>
                   <ul className="space-y-2 text-slate-300">
                     <li>
@@ -388,15 +388,15 @@ export default function TournamentsPage() {
                   </ul>
                 </div>
 
-                <div className="pt-4 border-t border-slate-800">
+                <div className="pt-4 border-t border-white/10">
                   <h3 className="text-xl font-semibold text-white mb-3">Rewards</h3>
-                  <div className="rounded-lg border border-accent-orange/20 bg-accent-orange/5 p-6 mb-4">
+                  <div className="rounded-lg border border-accent/20 bg-accent/5 p-6 mb-4">
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
                         <span className="text-lg font-semibold text-white">
                           🥇 1st Place
                         </span>
-                        <span className="text-2xl font-bold text-accent-orange">
+                        <span className="text-2xl font-bold text-accent">
                           5 SOL
                         </span>
                       </div>
@@ -435,7 +435,7 @@ export default function TournamentsPage() {
                   </ul>
                 </div>
 
-                <div className="pt-4 border-t border-slate-800">
+                <div className="pt-4 border-t border-white/10">
                   <h3 className="text-xl font-semibold text-white mb-3">Important Notes</h3>
                   <ul className="space-y-2 text-slate-300">
                     <li>• Tournament duration: Check the countdown timer above</li>

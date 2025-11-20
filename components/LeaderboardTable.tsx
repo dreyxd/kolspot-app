@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { LeaderboardEntry } from "@/types";
 import Badge from "./Badge";
@@ -12,7 +12,7 @@ export default function LeaderboardTable({ entries }: LeaderboardTableProps) {
     <div className="overflow-x-auto">
       <table className="w-full">
         <thead>
-          <tr className="border-b border-slate-800 text-left text-sm text-slate-400">
+          <tr className="border-b border-white/10 text-left text-sm text-neutral-400">
             <th className="pb-3 font-medium">Rank</th>
             <th className="pb-3 font-medium">Player</th>
             <th className="pb-3 font-medium">Wallet</th>
@@ -30,13 +30,13 @@ export default function LeaderboardTable({ entries }: LeaderboardTableProps) {
             return (
               <tr
                 key={entry.rank}
-                className={`border-b border-slate-800/50 transition-colors hover:bg-slate-800/30 ${
-                  isTop3 ? "border-l-4 border-l-accent-orange" : ""
+                className={`border-b border-white/10/50 transition-colors hover:bg-white/10/30 ${
+                  isTop3 ? "border-l-4 border-l-accent-text" : ""
                 }`}
               >
                 <td className="py-4 pl-2">
                   <div className="flex items-center space-x-2">
-                    <span className={`font-semibold ${isTop3 ? "text-accent-orange" : "text-slate-300"}`}>
+                    <span className={`font-semibold ${isTop3 ? "text-accent-text" : "text-slate-300"}`}>
                       {entry.rank}
                     </span>
                   </div>
@@ -45,7 +45,7 @@ export default function LeaderboardTable({ entries }: LeaderboardTableProps) {
                   <span className="font-medium text-white">{entry.player}</span>
                 </td>
                 <td className="py-4">
-                  <code className="text-sm text-slate-400">{entry.wallet}</code>
+                  <code className="text-sm text-neutral-400">{entry.wallet}</code>
                 </td>
                 <td className="py-4">
                   <span className="font-semibold text-green-400">+{entry.roi.toFixed(1)}%</span>
@@ -62,7 +62,7 @@ export default function LeaderboardTable({ entries }: LeaderboardTableProps) {
                       {rewardEmoji} {entry.reward} SOL
                     </Badge>
                   ) : (
-                    <span className="text-slate-500">—</span>
+                    <span className="text-neutral-500">—</span>
                   )}
                 </td>
               </tr>

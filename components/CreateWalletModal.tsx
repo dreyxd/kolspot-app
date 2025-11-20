@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from 'react';
 import Card from './Card';
@@ -72,7 +72,7 @@ export default function CreateWalletModal({ onClose, onWalletCreated }: CreateWa
               <h2 className="text-2xl font-bold text-white">Create Tournament Wallet</h2>
               <button
                 onClick={onClose}
-                className="text-slate-400 hover:text-white text-2xl"
+                className="text-neutral-400 hover:text-white text-2xl"
               >
                 ×
               </button>
@@ -109,13 +109,13 @@ export default function CreateWalletModal({ onClose, onWalletCreated }: CreateWa
               <button
                 onClick={handleCreateWallet}
                 disabled={isJoining}
-                className="flex-1 rounded-lg bg-accent-orange px-6 py-3 font-semibold text-white transition-all hover:bg-accent-orange-light disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 rounded-lg bg-accent px-6 py-3 font-semibold text-white transition-all hover:bg-accent-soft disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isJoining ? 'Creating Wallet...' : 'Create Wallet & Join Tournament'}
               </button>
               <button
                 onClick={onClose}
-                className="px-6 py-3 text-slate-400 hover:text-white transition-colors"
+                className="px-6 py-3 text-neutral-400 hover:text-white transition-colors"
               >
                 Cancel
               </button>
@@ -133,8 +133,8 @@ export default function CreateWalletModal({ onClose, onWalletCreated }: CreateWa
             </div>
 
             <div className="space-y-4 mb-6">
-              <div className="rounded-lg border border-accent-orange/20 bg-accent-orange/10 p-4">
-                <div className="text-sm text-slate-400 mb-1">Your Wallet Address</div>
+              <div className="rounded-lg border border-accent/20 bg-accent/10 p-4">
+                <div className="text-sm text-neutral-400 mb-1">Your Wallet Address</div>
                 <div className="font-mono text-white break-all">{wallet.publicKey}</div>
               </div>
 
@@ -149,13 +149,13 @@ export default function CreateWalletModal({ onClose, onWalletCreated }: CreateWa
                     <div className="flex space-x-2">
                       <button
                         onClick={handleDownload}
-                        className="rounded-lg bg-accent-orange px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-accent-orange-light"
+                        className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-accent-soft"
                       >
                         Download Wallet File
                       </button>
                       <button
                         onClick={handleCopyPrivateKey}
-                        className="rounded-lg border border-slate-700 px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-slate-800"
+                        className="rounded-lg border border-surface px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-white/10"
                       >
                         Copy Private Key
                       </button>
@@ -167,7 +167,7 @@ export default function CreateWalletModal({ onClose, onWalletCreated }: CreateWa
 
             <button
               onClick={() => setStep('instructions')}
-              className="w-full rounded-lg bg-accent-orange px-6 py-3 font-semibold text-white transition-all hover:bg-accent-orange-light"
+              className="w-full rounded-lg bg-accent px-6 py-3 font-semibold text-white transition-all hover:bg-accent-soft"
             >
               Continue to Instructions
             </button>
@@ -181,15 +181,15 @@ export default function CreateWalletModal({ onClose, onWalletCreated }: CreateWa
               <h2 className="text-2xl font-bold text-white">Next Steps</h2>
               <button
                 onClick={onClose}
-                className="text-slate-400 hover:text-white text-2xl"
+                className="text-neutral-400 hover:text-white text-2xl"
               >
                 ×
               </button>
             </div>
 
             <div className="space-y-4 mb-6">
-              <div className="rounded-lg border border-accent-orange/20 bg-accent-orange/10 p-4">
-                <div className="font-semibold text-accent-orange mb-2">📍 Your Wallet Address</div>
+              <div className="rounded-lg border border-accent/20 bg-accent/10 p-4">
+                <div className="font-semibold text-accent mb-2">📍 Your Wallet Address</div>
                 <div className="font-mono text-sm text-white break-all">{wallet.publicKey}</div>
               </div>
 
@@ -197,19 +197,19 @@ export default function CreateWalletModal({ onClose, onWalletCreated }: CreateWa
                 <h3 className="font-semibold text-white">To Start Trading:</h3>
                 
                 <div className="flex items-start space-x-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent-orange flex items-center justify-center text-white font-bold">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-bold">
                     1
                   </div>
                   <div>
                     <div className="font-medium text-white">Join Our X Community</div>
-                    <p className="text-sm text-slate-400">
+                    <p className="text-sm text-neutral-400">
                       Follow us on X (Twitter) and join the KOLSpot community
                     </p>
                     <a
                       href="https://x.com/kolspot"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block mt-2 text-accent-orange hover:text-accent-orange-light text-sm font-medium"
+                      className="inline-block mt-2 text-accent hover:text-accent-soft text-sm font-medium"
                     >
                       Follow @KOLSpot →
                     </a>
@@ -217,27 +217,27 @@ export default function CreateWalletModal({ onClose, onWalletCreated }: CreateWa
                 </div>
 
                 <div className="flex items-start space-x-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent-orange flex items-center justify-center text-white font-bold">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-bold">
                     2
                   </div>
                   <div>
                     <div className="font-medium text-white">Contact Admin for 1 SOL</div>
-                    <p className="text-sm text-slate-400 mb-2">
+                    <p className="text-sm text-neutral-400 mb-2">
                       Send your wallet address to the admin to receive 1 SOL to start trading
                     </p>
-                    <div className="rounded bg-slate-900 p-2 font-mono text-xs text-slate-300 break-all">
+                    <div className="rounded bg-background p-2 font-mono text-xs text-slate-300 break-all">
                       {wallet.publicKey}
                     </div>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent-orange flex items-center justify-center text-white font-bold">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-bold">
                     3
                   </div>
                   <div>
                     <div className="font-medium text-white">Start Trading</div>
-                    <p className="text-sm text-slate-400">
+                    <p className="text-sm text-neutral-400">
                       Once you receive 1 SOL, start trading on Solana DEXs. All trades will be tracked automatically!
                     </p>
                   </div>
@@ -259,7 +259,7 @@ export default function CreateWalletModal({ onClose, onWalletCreated }: CreateWa
 
             <button
               onClick={onClose}
-              className="w-full rounded-lg bg-accent-orange px-6 py-3 font-semibold text-white transition-all hover:bg-accent-orange-light"
+              className="w-full rounded-lg bg-accent px-6 py-3 font-semibold text-white transition-all hover:bg-accent-soft"
             >
               Got It!
             </button>

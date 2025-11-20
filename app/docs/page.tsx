@@ -1,4 +1,4 @@
-import Card from "@/components/Card";
+﻿import Card from "@/components/Card";
 import Badge from "@/components/Badge";
 
 export default function Docs() {
@@ -28,7 +28,7 @@ export default function Docs() {
               <div>
                 <h3 className="text-lg font-semibold text-white mb-2">Step 2: Join the KOLSpot Community</h3>
                 <p className="mb-2">
-                  Follow <a href="https://x.com/kolspot" target="_blank" rel="noopener noreferrer" className="text-accent-orange hover:underline">@KOLSpot on X (Twitter)</a> to stay updated with tournament announcements, results, and community discussions.
+                  Follow <a href="https://x.com/kolspot" target="_blank" rel="noopener noreferrer" className="text-accent-light hover:underline">@KOLSpot on X (Twitter)</a> to stay updated with tournament announcements, results, and community discussions.
                 </p>
               </div>
 
@@ -37,7 +37,7 @@ export default function Docs() {
                 <p className="mb-2">
                   Contact the KOLSpot admin with your wallet address to receive 1 SOL as starting capital for the tournament.
                 </p>
-                <div className="rounded-lg bg-slate-800 p-3 font-mono text-sm">
+                <div className="rounded-lg bg-white/10 p-3 font-mono text-sm">
                   Your wallet address will be shown after wallet creation
                 </div>
               </div>
@@ -193,7 +193,7 @@ export default function Docs() {
                   <li><strong>Download Wallet File:</strong> Saves a JSON file with your public and private keys</li>
                   <li><strong>Copy Private Key:</strong> Copies your private key to clipboard for manual backup</li>
                 </ul>
-                <p className="mt-2 text-sm text-slate-400">
+                <p className="mt-2 text-sm text-neutral-400">
                   Store multiple backups in secure locations (encrypted USB drive, password manager, etc.)
                 </p>
               </div>
@@ -297,7 +297,7 @@ export default function Docs() {
               <p>Need help? Reach out through:</p>
               <ul className="list-disc list-inside ml-4 space-y-1">
                 <li>
-                  <a href="https://x.com/kolspot" target="_blank" rel="noopener noreferrer" className="text-accent-orange hover:underline">
+                  <a href="https://x.com/kolspot" target="_blank" rel="noopener noreferrer" className="text-accent-light hover:underline">
                     X (Twitter) @KOLSpot
                   </a>
                 </li>
@@ -308,7 +308,7 @@ export default function Docs() {
           </section>
 
           <div className="pt-6 border-t border-slate-700">
-            <p className="text-sm text-slate-400">
+            <p className="text-sm text-neutral-400">
               Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
             </p>
           </div>

@@ -48,11 +48,9 @@ export default function Home() {
       {/* Hero Section */}
       <div className="text-center mb-16">
         <h1 className="text-5xl md:text-6xl font-bold mb-6">
-          <span className="text-white">KOL</span>
-          <span className="text-accent-orange">Spot</span>
-          <span className="text-white"> App</span>
+          <span className="bg-gradient-to-r from-white via-neutral-200 to-neutral-400 bg-clip-text text-transparent">KOLSpot App</span>
         </h1>
-        <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-12">
+        <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-12">
           Track KOLs, join on-chain trading tournaments, and climb the leaderboard using your real Solana trades.
         </p>
         
@@ -93,19 +91,19 @@ export default function Home() {
             <Badge variant="success">● Live</Badge>
           </div>
           {isLoading ? (
-            <div className="text-center py-4 text-slate-400">Loading...</div>
+            <div className="text-center py-4 text-neutral-400">Loading...</div>
           ) : tournament ? (
             <div className="space-y-3">
               <div>
-                <div className="text-2xl font-bold text-accent-orange mb-1">{tournament.name}</div>
-                <div className="text-sm text-slate-400">{tournament.description}</div>
+                <div className="text-2xl font-bold text-accent-text mb-1">{tournament.name}</div>
+                <div className="text-sm text-neutral-400">{tournament.description}</div>
               </div>
-              <div className="pt-3 border-t border-slate-800">
-                <div className="text-sm text-slate-400 mb-1">Prize Pool</div>
-                <div className="text-lg font-semibold text-white">{tournament.prize_pool} SOL</div>
+              <div className="pt-3 border-t border-white/10">
+                <div className="text-sm text-neutral-400 mb-1">Prize Pool</div>
+                <div className="text-lg font-semibold text-accent-text">{tournament.prize_pool} SOL</div>
               </div>
-              <div className="pt-3 border-t border-slate-800">
-                <div className="text-sm text-slate-400 mb-1">Participants</div>
+              <div className="pt-3 border-t border-white/10">
+                <div className="text-sm text-neutral-400 mb-1">Participants</div>
                 <div className="text-lg font-semibold text-white">{tournament.participant_count || 0} traders</div>
               </div>
             </div>
@@ -125,24 +123,24 @@ export default function Home() {
             <div className="text-center py-8 text-slate-400">Loading...</div>
           ) : wallet && performance ? (
             <div className="space-y-3">
-              <div className="text-center pb-3 border-b border-slate-800">
-                <div className="text-3xl font-bold text-accent-orange mb-1">#{performance.rank || 'N/A'}</div>
-                <div className="text-sm text-slate-400">Current Rank</div>
+              <div className="text-center pb-3 border-b border-white/10">
+                <div className="text-3xl font-bold text-accent-text mb-1">#{performance.rank || 'N/A'}</div>
+                <div className="text-sm text-neutral-400">Current Rank</div>
               </div>
               <div>
-                <div className="text-sm text-slate-400 mb-1">Total PnL</div>
+                <div className="text-sm text-neutral-400 mb-1">Total PnL</div>
                 <div className={`text-lg font-semibold ${performance.total_pnl >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                   {performance.total_pnl >= 0 ? '+' : ''}{performance.total_pnl?.toFixed(4) || '0.0000'} SOL
                 </div>
               </div>
               <div>
-                <div className="text-sm text-slate-400 mb-1">Current Balance</div>
+                <div className="text-sm text-neutral-400 mb-1">Current Balance</div>
                 <div className="text-lg font-semibold text-white">
                   {performance.current_balance?.toFixed(4) || '0.0000'} SOL
                 </div>
               </div>
               <div>
-                <div className="text-sm text-slate-400 mb-1">ROI</div>
+                <div className="text-sm text-neutral-400 mb-1">ROI</div>
                 <div className={`text-lg font-semibold ${performance.roi >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                   {performance.roi >= 0 ? '+' : ''}{performance.roi?.toFixed(2) || '0.00'}%
                 </div>
@@ -150,8 +148,8 @@ export default function Home() {
             </div>
           ) : (
             <div className="text-center py-8">
-              <div className="text-sm text-slate-400 mb-2">Create a wallet to see your stats</div>
-              <div className="text-xs text-slate-500 mt-2">
+              <div className="text-sm text-neutral-400 mb-2">Create a wallet to see your stats</div>
+              <div className="text-xs text-neutral-500 mt-2">
                 Click "Create Wallet" in the navigation
               </div>
             </div>
@@ -165,7 +163,7 @@ export default function Home() {
             <Badge variant="reward">Featured</Badge>
           </div>
           {isLoading ? (
-            <div className="text-center py-4 text-slate-400">Loading...</div>
+            <div className="text-center py-4 text-neutral-400">Loading...</div>
           ) : topKols.length > 0 ? (
             <>
               <div className="space-y-3">
@@ -173,18 +171,18 @@ export default function Home() {
                   <div key={kol.rank} className="flex items-center justify-between">
                     <div>
                       <div className="font-semibold text-white">{kol.name}</div>
-                      <div className="text-xs text-slate-400">{kol.tier}</div>
+                      <div className="text-xs text-neutral-400">{kol.tier}</div>
                     </div>
                     <div className="text-sm font-semibold text-green-400">+{kol.lifetimeRoi.toFixed(1)}%</div>
                   </div>
                 ))}
               </div>
-              <Link href="/kolboard" className="block mt-4 text-center text-sm text-accent-orange hover:text-accent-orange-light">
+              <Link href="/kolboard" className="block mt-4 text-center text-sm text-accent-light hover:text-accent-text">
                 View Full KOLBoard →
               </Link>
             </>
           ) : (
-            <div className="text-center py-4 text-slate-400">
+            <div className="text-center py-4 text-neutral-400">
               No KOL data available yet
             </div>
           )}

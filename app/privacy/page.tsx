@@ -1,4 +1,4 @@
-import Card from "@/components/Card";
+﻿import Card from "@/components/Card";
 
 export default function Privacy() {
   return (
@@ -164,7 +164,7 @@ export default function Privacy() {
           </section>
 
           <div className="pt-6 border-t border-slate-700">
-            <p className="text-sm text-slate-400">
+            <p className="text-sm text-neutral-400">
               Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
             </p>
           </div>

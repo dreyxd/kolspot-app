@@ -35,32 +35,28 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="border-b border-slate-800 bg-background-card/50 backdrop-blur-sm">
+      <nav className="sticky top-0 z-40 border-b border-white/10 bg-background/80 backdrop-blur-xl shadow-3d">
         <div className="container mx-auto px-4">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3">
               <img 
-                src="/logo.png" 
+                src="/logo.jpg" 
                 alt="KOLSpot Logo" 
-                className="h-10 w-auto"
+                className="h-10 w-auto object-contain rounded-lg"
               />
-              <div className="text-2xl font-bold">
-                <span className="text-white">KOL</span>
-                <span className="text-accent-orange">Spot</span>
-              </div>
             </Link>
 
             {/* Navigation Links */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-accent-orange ${
+                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                     pathname === link.href
-                      ? "text-accent-orange"
-                      : "text-slate-300"
+                      ? "text-white bg-accent shadow-glow"
+                      : "text-neutral-300 hover:text-white hover:bg-white/5"
                   }`}
                 >
                   {link.label}
@@ -70,13 +66,13 @@ export default function Navbar() {
 
             {/* Create Wallet / Show Wallet Button */}
             {wallet ? (
-              <div className="rounded-lg bg-accent-orange/10 border border-accent-orange/20 px-6 py-2.5 font-mono text-sm text-accent-orange">
+              <div className="rounded-lg bg-accent/10 border border-accent/20 px-6 py-2.5 font-mono text-sm text-accent-text">
                 {truncateAddress(wallet.publicKey)}
               </div>
             ) : (
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="rounded-lg bg-accent-orange px-6 py-2.5 text-sm font-semibold text-white transition-all hover:bg-accent-orange-light hover:ring-2 hover:ring-accent-orange/50"
+                className="px-6 py-2.5 rounded-lg bg-accent text-white font-semibold hover:bg-accent-soft shadow-glow hover:shadow-glow-lg transition-all duration-300"
               >
                 Create Wallet
               </button>

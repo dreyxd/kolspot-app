@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { ReactNode } from "react";
 
@@ -18,7 +18,7 @@ export default function Tabs({ tabs, activeTab, onChange, children }: TabsProps)
   return (
     <div className="w-full">
       {/* Tab Headers */}
-      <div className="border-b border-slate-800">
+      <div className="border-b border-white/10">
         <div className="flex space-x-8">
           {tabs.map((tab) => (
             <button
@@ -26,13 +26,13 @@ export default function Tabs({ tabs, activeTab, onChange, children }: TabsProps)
               onClick={() => onChange(tab.id)}
               className={`relative pb-4 text-sm font-medium transition-colors ${
                 activeTab === tab.id
-                  ? "text-accent-orange"
-                  : "text-slate-400 hover:text-slate-300"
+                  ? "text-accent-text"
+                  : "text-neutral-400 hover:text-slate-300"
               }`}
             >
               {tab.label}
               {activeTab === tab.id && (
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-orange" />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-text" />
               )}
             </button>
           ))}

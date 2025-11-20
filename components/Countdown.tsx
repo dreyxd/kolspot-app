@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 
@@ -40,8 +40,8 @@ export default function Countdown({ endDate }: CountdownProps) {
 
   return (
     <div className="flex items-center space-x-1 text-sm font-mono">
-      <span className="text-slate-400">Ends in</span>
-      <span className="text-accent-orange font-semibold">
+      <span className="text-neutral-400">Ends in</span>
+      <span className="text-accent-text font-semibold">
         {String(timeLeft.days).padStart(2, "0")}d{" "}
         {String(timeLeft.hours).padStart(2, "0")}h{" "}
         {String(timeLeft.minutes).padStart(2, "0")}m

@@ -7,14 +7,14 @@ interface CardProps {
 }
 
 export default function Card({ children, className = "", variant = "default" }: CardProps) {
-  const baseStyles = "rounded-lg border p-6";
+  const baseStyles = "bg-surface/95 backdrop-blur-xl rounded-2xl shadow-3d border transition-all duration-300";
   const variantStyles = {
-    default: "border-slate-800 bg-background-card",
-    highlight: "border-accent-orange/20 bg-background-card ring-1 ring-accent-orange/10",
+    default: "border-white/10 hover:shadow-3d-hover hover:border-accent/30",
+    highlight: "border-accent/30 bg-surface/95 ring-1 ring-accent/20 hover:shadow-3d-hover",
   };
 
   return (
-    <div className={`${baseStyles} ${variantStyles[variant]} ${className}`}>
+    <div className={`${baseStyles} ${variantStyles[variant]} p-6 ${className}`}>
       {children}
     </div>
   );
