@@ -9,6 +9,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "KOLSpot App - Track KOLs & Trading Tournaments",
   description: "Track KOLs, join on-chain trading tournaments, and climb the leaderboard using your real Solana trades.",
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({
